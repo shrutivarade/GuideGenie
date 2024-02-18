@@ -6,13 +6,15 @@ def display():
     faculty_details = []
     for idx, f in faculty.iterrows():
         print(f)
+        search_query = "+".join(f["Faculty Name"].split(" "))
+
         faculty_details.append(
             {
                 "name": f["Faculty Name"],
                 "email": f["Email Category"],
                 "major": f["Department"],
                 "publication": "Google Scholar",
-                "url": f"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C22&as_vis=1&q={f['Faculty Name']}&btnG="
+                "url": f"https://scholar.google.com/scholar?hl=en&as_sdt=0%2C22&as_vis=1&q={search_query}&btnG="
                 
             }
         )
@@ -35,7 +37,7 @@ def display():
                 st.write(faculty["major"])
             with col4:
                 st.markdown("**Publications:**")
-                st.write(faculty["publication"])
+                st.write(f"Google Scholar [link]({faculty['url']})!")
             st.markdown("---")  # Separator line
 
 

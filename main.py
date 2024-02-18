@@ -1,5 +1,5 @@
 import streamlit as st
-import home, about_us, student_info, option, error, recommendation, directory, prof_cluster
+import home, student_info, option, error, recommendation, directory, prof_cluster
 
 # Layout for navigation (horizontal sidebar buttons)
 st.title("Guide Genie")
@@ -7,7 +7,6 @@ st.title("Guide Genie")
 # A dictionary mapping page names to functions
 PAGES = {
     "Home": home.display,
-    "About Us": about_us.display,
     "Student Info": student_info.display,
     "Option": option.display,
     "Error": error.display,
