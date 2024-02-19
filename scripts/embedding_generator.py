@@ -2,6 +2,9 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 import google.generativeai as genai
 import pandas as pd
 
+genai.configure(api_key="your_api_key")
+genai_model = genai.GenerativeModel('gemini-pro')
+
 @retry(
     stop=stop_after_attempt(5),  # Retry up to 5 times
     wait=wait_fixed(2),  # Wait 2 seconds between retries
