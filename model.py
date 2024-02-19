@@ -11,7 +11,7 @@ import numpy as np
 import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 
-genai.configure(api_key="AIzaSyAWOy8lIg8xL8btx6hcrMctxzfEsAgoc7k")
+genai.configure(api_key="your_api_key")
 genai_model = genai.GenerativeModel('gemini-pro')
 
 def get_gemini_embedding(text):
